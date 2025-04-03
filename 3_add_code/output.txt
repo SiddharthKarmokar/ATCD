@@ -1,0 +1,3 @@
+MOV AX, b
+ADD AX, c
+MOV a, AX
