@@ -1,0 +1,69 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> S
+Rule 1     S -> A B
+Rule 2     A -> a
+Rule 3     B -> b
+
+Terminals, with rules where they appear
+
+a                    : 2
+b                    : 3
+error                : 
+
+Nonterminals, with rules where they appear
+
+A                    : 1
+B                    : 1
+S                    : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . S
+    (1) S -> . A B
+    (2) A -> . a
+
+    a               shift and go to state 3
+
+    S                              shift and go to state 1
+    A                              shift and go to state 2
+
+state 1
+
+    (0) S' -> S .
+
+
+
+state 2
+
+    (1) S -> A . B
+    (3) B -> . b
+
+    b               shift and go to state 5
+
+    B                              shift and go to state 4
+
+state 3
+
+    (2) A -> a .
+
+    b               reduce using rule 2 (A -> a .)
+
+
+state 4
+
+    (1) S -> A B .
+
+    $end            reduce using rule 1 (S -> A B .)
+
+
+state 5
+
+    (3) B -> b .
+
+    $end            reduce using rule 3 (B -> b .)
+

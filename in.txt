@@ -1,0 +1,6 @@
+4
+S->aAb
+S->aAc
+S->d
+A->xy
+A->xz

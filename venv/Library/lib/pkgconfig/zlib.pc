@@ -1,0 +1,13 @@
+prefix=D:/Programming/AutomataCompilerDesign/exam/venv/Library
+exec_prefix=D:/Programming/AutomataCompilerDesign/exam/venv/Library
+libdir=D:/Programming/AutomataCompilerDesign/exam/venv/Library/lib
+sharedlibdir=D:/Programming/AutomataCompilerDesign/exam/venv/Library/lib
+includedir=D:/Programming/AutomataCompilerDesign/exam/venv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
