@@ -1,12 +1,25 @@
 %{
-#include <stdio.h>
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    void yyerror(const char *s);
+    int yylex();
 %}
 
 %token ID PLUS
 
-%start E
+%%
+
+E: T PLUS E { printf("E -> T + E\n"); }
+ | T        { printf("E -> T\n"); }
+ ;
+
+T: ID       { printf("T -> id\n"); }
+ ;
 
 %%
-E : > T + E  { printf("E  -> > T + E \n"); } |  E { printf("E  ->  E\n"); } ;
-T : > id { printf("T  -> > id\n"); } ;
-%%
+
+
+void yyerror(const char *s) {
+    fprintf(stderr, "Parse error: %s\\n", s);
+}

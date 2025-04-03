@@ -7,3 +7,4 @@ int main() {
     yyparse();
     return 0;
 }
+//gcc -o slr_parser parser.tab.c lex.yy.c main.c -ll
